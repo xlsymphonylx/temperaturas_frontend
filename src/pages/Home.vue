@@ -286,7 +286,7 @@ export default {
         fecha_registro: item.created_at,
       }));
       const fileName = "reportes-generales";
-      const exportType = exportFromJSON.types.xls;
+      const exportType = exportFromJSON.types.csv;
       exportXlsFile({ data, fileName, exportType });
     },
     generateRangosExcel() {
@@ -298,7 +298,7 @@ export default {
         temperaturas_tomadas: item.tempCount,
       }));
       const fileName = "reportes-rangos";
-      const exportType = exportFromJSON.types.xls;
+      const exportType = exportFromJSON.types.csv;
       exportXlsFile({ data, fileName, exportType });
     },
   },
