@@ -1,6 +1,14 @@
 <template>
   <div>
-    <div class="text-center title">Proyecto Arquitectura Temperaturas SA</div>
+    <div class="text-center title">Proyecto Arquitectura Temperaturas S.A.</div>
+    <div class="logo-container">
+      <v-img
+        lazy-src="imgs/logo.png"
+        max-height="250"
+        max-width="250"
+        src="imgs/logo.png"
+      ></v-img>
+    </div>
     <div v-if="loading">
       <div class="loader-temp" style="margin-top: 2rem">
         <v-progress-circular
@@ -304,5 +312,10 @@ export default {
 .loader-temp {
   display: flex;
   justify-content: center;
+}
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
 }
 </style>
