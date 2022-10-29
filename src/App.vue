@@ -18,10 +18,17 @@
               <v-list-item-title>Inicio</v-list-item-title>
             </v-list-item>
           </router-link>
+          <router-link to="/temperaturas">
+            <v-list-item>
+              <v-list-item-icon>
+                <v-icon>mdi-home</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title>Temperaturas</v-list-item-title>
+            </v-list-item>
+          </router-link>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
-
     <div style="margin-top: 5rem; padding: 1rem">
       <router-view></router-view>
     </div>
@@ -44,5 +51,9 @@ a:link {
 }
 a:hover {
   text-decoration: none !important;
+}
+.swal2-title,
+.swal2-html-container {
+  font-family: "Roboto", sans-serif !important;
 }
 </style>

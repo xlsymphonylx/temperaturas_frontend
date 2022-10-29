@@ -3,6 +3,7 @@ import Router from "vue-router";
 
 const routerOptions = [
   { path: "/", component: "Home" },
+  { path: "/temperaturas", component: "Temperaturas" },
 ];
 
 const routes = routerOptions.map((route) => {
