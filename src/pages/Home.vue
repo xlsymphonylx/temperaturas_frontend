@@ -23,7 +23,11 @@
       <div class="text-center title" style="margin-top: 2rem">
         Temperaturas Generales
       </div>
-
+      <div class="text-center" style="margin: 1rem">
+        <v-btn depressed color="success" @click="generateGeneralExcel">
+          Descargar Reportes Generales
+        </v-btn>
+      </div>
       <div>
         <div class="margintop">
           <v-data-table
@@ -40,6 +44,11 @@
       </div>
       <div class="text-center title" style="margin-top: 2rem">
         Rangos de Temperaturas
+      </div>
+      <div class="text-center" style="margin: 1rem 0rem">
+        <v-btn depressed color="success" @click="generateRangosExcel">
+          Descargar Rangos de Temperaturas
+        </v-btn>
       </div>
       <div>
         <div class="margintop">
@@ -94,6 +103,8 @@
 <script>
 import tempService from "../services/tempService";
 import swalMixin from "../mixins/swalMixin";
+import exportXlsFile from "export-from-json";
+import exportFromJSON from "export-from-json";
 export default {
   mixins: [swalMixin],
   data: () => ({
@@ -256,6 +267,31 @@ export default {
     isTempAmbHigh(temp) {
       const tempToFloat = parseFloat(temp);
       return tempToFloat > 26.33;
+    },
+    generateGeneralExcel() {
+      let { filteredTemps: data } = this;
+      data = data.map((item) => ({
+        numero: item.id,
+        temperatura_corporal: item.temp_corp,
+        temperatura_ambiente: item.temp_amb,
+        ubicacion: item.ubicacion,
+        fecha_registro: item.created_at,
+      }));
+      const fileName = "reportes-generales";
+      const exportType = exportFromJSON.types.xls;
+      exportXlsFile({ data, fileName, exportType });
+    },
+    generateRangosExcel() {
+      let { averageTemps: data } = this;
+      data = data.map((item) => ({
+        numero: item.id,
+        ubicacion: item.ubicacion,
+        rango_temperatura: item.name,
+        temperaturas_tomadas: item.tempCount,
+      }));
+      const fileName = "reportes-rangos";
+      const exportType = exportFromJSON.types.xls;
+      exportXlsFile({ data, fileName, exportType });
     },
   },
 };

@@ -1,8 +1,8 @@
 <template>
   <v-app>
-    <v-app-bar app color="purple" dark>
+    <v-app-bar app color="orange" dark>
       <v-app-bar-nav-icon @click="drawer = true"> </v-app-bar-nav-icon>
-      <v-toolbar-title>Temperaturas SA</v-toolbar-title>
+      <v-toolbar-title>Temperaturas S.A.</v-toolbar-title>
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" absolute temporary>
       <v-list nav dense>
