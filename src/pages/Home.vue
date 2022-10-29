@@ -15,6 +15,11 @@
       </div>
     </div>
     <div v-else>
+      <div class="text-center">
+        <v-btn depressed color="primary" @click="getAllTemps">
+          Actualizar Temperaturas
+        </v-btn>
+      </div>
       <div class="text-center title" style="margin-top: 2rem">
         Temperaturas Generales
       </div>

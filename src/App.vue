@@ -18,14 +18,6 @@
               <v-list-item-title>Inicio</v-list-item-title>
             </v-list-item>
           </router-link>
-          <router-link to="/temperaturas">
-            <v-list-item>
-              <v-list-item-icon>
-                <v-icon>mdi-home</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>Temperaturas</v-list-item-title>
-            </v-list-item>
-          </router-link>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
